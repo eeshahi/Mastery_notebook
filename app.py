@@ -41,3 +41,25 @@ with st.container(border=True):
 
 
                                     
+#Add New assignment 
+st.markdown("# Add New Assignment")
+
+#input
+title = st.text_input("Title", placeholder = "ex. Homework 1", 
+                      help = "This is the name of the assignment")
+description = st.text_area("Description", placeholder = "ex. Database Design...")
+due_date = st.date_input("Due Date")
+assignments_type = st.radio("Type", ["Homework", "Lab"])
+#assignments_type2 = st.selectbox("Type", ["Homework", "Lab", "Other"])
+#if assignments_type2 == "Other":
+#    assignments_type2 = st.text_input("Assignment Type")
+
+#lab = st.checkbox("Lab")
+
+with st.expander("Assignment Preview", expanded=True):
+    st.markdown("## Live Preview")
+    st.markdown(f"Title: {title}")
+
+btn_save = st.button("Save", width="stretch")
+if btn_save:
+    st.warning("Working on it!")    
